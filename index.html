@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">   <!-- viewport for mobile first, control page scaling when rendering -->
+	<title>Fetch Dog Image by Breed</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" /> <!-- nomalize css -->
+	<link href="style.css" rel="stylesheet" type="text/css" />
+ </head>
+
+ <body>
+   <main>
+      <div class="container">
+        <h1>Dog Images by Breed</h1>
+       
+       <form>
+           <legend>What breed of dog would you like see an image of?</legend>
+           <label for="breed">Enter a breed:</label><input id="breed" type="text" size="25" placeholder="e.g. hound"><br>
+           <button type="submit">Show me the dog!</button>
+       </form>
+
+       <section class="hidden">
+           <h2>Here's your dog picture!</h2>
+           <img class="image-result">
+       </section>
+      </div>
+
+   </main>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="script.js">
+  </script>
+
+ </body>
+
+
+
+</html>
+

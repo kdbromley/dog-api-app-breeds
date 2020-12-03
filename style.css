@@ -1,0 +1,28 @@
+form {
+    border: 1px solid grey;
+    margin: 20px;
+    padding: 10px;
+    font-family: sans-serif;
+}
+
+h1, h2 {
+    margin: 20px;
+}
+
+legend, label, input {
+    margin-right: 7px;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media all and (min-width: 600px) {
+    form {
+        width: 50%;
+    }
+
+} 
+
