@@ -3,17 +3,23 @@ function getDogImage(requestedBreed) {
     .then(response => {
      if (response.status === 200) {
          return response.json();
-      } if (response.status === 404) { 
-        return Promise.reject('Breed not found.')
+      } if (response.status === 404) {
+        response.json().then(responseJson => console.log(responseJson));
+        return Promise.reject('Breed not found.');
       }
     })
-    .then(responseJson => displayDogImage(responseJson))
-    .catch(error => alert("Sorry, an error occured! " + error));
+    .then(responseJson => {
+        displayDogImage(responseJson);
+        console.log(responseJson);
+    })
+    .catch(error => {
+      alert("Sorry, an error occured! " + error);
+    })
 }
 
 function displayDogImage(responseJson) {
-        $('section').removeClass('hidden');
-        $('.image-result').replaceWith(`<img src="${responseJson.message}" class="image-result">`);
+        $('.display-result').removeClass('hidden');
+        $('.dog-pic').replaceWith(`<img src="${responseJson.message}" class="dog-pic">`);
 }
 
 
@@ -22,7 +28,6 @@ function handleSubmit() {
         event.preventDefault();
         const requestedBreed = $('input').val();
         $('input').val("");
-        console.log(requestedBreed)
         getDogImage(requestedBreed);
     })
 }
